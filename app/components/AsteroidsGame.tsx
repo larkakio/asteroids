@@ -97,7 +97,6 @@ function pointInPoly(px: number, py: number, verts: Vec2[], cx: number, cy: numb
 
 const HIGH_SCORE_KEY = "asteroids-high-score";
 const SCORE_BAR_HEIGHT = 48;
-const CONTROLS_HEIGHT = 160;
 
 export function AsteroidsGame() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
