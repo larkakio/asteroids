@@ -20,7 +20,12 @@ export const farcasterConfig = {
     subtitle: "Classic arcade shooter in space",
     description:
       "Blast asteroids, avoid collisions, and beat the high score in this classic arcade mini app on Base.",
-    screenshotUrls: [`${ROOT_URL}/screenshot-portrait.png`],
+    screenshotUrls: [
+      `${ROOT_URL}/screenshot-1.png`,
+      `${ROOT_URL}/screenshot-2.png`,
+      `${ROOT_URL}/screenshot-3.png`,
+      `${ROOT_URL}/screenshot-4.png`,
+    ],
     iconUrl: `${ROOT_URL}/icon.png`,
     splashImageUrl: `${ROOT_URL}/hero-image.png`,
     splashBackgroundColor: "#0a0a0f",
