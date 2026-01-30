@@ -165,35 +165,6 @@ export function AsteroidsGame() {
   }, []);
 
   useEffect(() => {
-    if (gameState !== "playing" || !controlsRef.current) return;
-    const el = controlsRef.current;
-    const raf = requestAnimationFrame(() => {
-      const rect = el.getBoundingClientRect();
-      const vh = typeof window !== "undefined" ? window.innerHeight : 0;
-      fetch("http://127.0.0.1:7244/ingest/8b4d747d-1575-489a-bd62-e24d8ced6440", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          location: "AsteroidsGame.tsx:controlsLayout",
-          message: "controls top-left",
-          data: {
-            barTop: rect.top,
-            barLeft: rect.left,
-            barHeight: rect.height,
-            barWidth: rect.width,
-            viewportHeight: vh,
-            hypothesisId: "H1",
-          },
-          timestamp: Date.now(),
-          sessionId: "debug-session",
-          hypothesisId: "H1",
-        }),
-      }).catch(() => {});
-    });
-    return () => cancelAnimationFrame(raf);
-  }, [gameState]);
-
-  useEffect(() => {
     if (gameState !== "playing") return;
 
     const canvas = canvasRef.current;
