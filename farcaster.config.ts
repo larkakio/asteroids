@@ -19,14 +19,13 @@ export const farcasterConfig = {
   miniapp: {
     version: "1",
     name: "Asteroids",
-    subtitle: "Classic arcade shooter in space",
+    subtitle: "Arcade shooter in space",
     description:
       "Blast asteroids, avoid collisions, and beat the high score in this classic arcade mini app on Base.",
     screenshotUrls: [
       `${ROOT_URL}/screenshot-1.png`,
       `${ROOT_URL}/screenshot-2.png`,
       `${ROOT_URL}/screenshot-3.png`,
-      `${ROOT_URL}/screenshot-4.png`,
     ],
     iconUrl: `${ROOT_URL}/icon.png`,
     splashImageUrl: `${ROOT_URL}/hero-image.png`,
@@ -36,7 +35,7 @@ export const farcasterConfig = {
     primaryCategory: "games",
     tags: ["game", "arcade", "asteroids", "retro", "space"],
     heroImageUrl: `${ROOT_URL}/hero-image.png`,
-    tagline: "Classic arcade shooter in space",
+    tagline: "Arcade shooter in space",
     ogTitle: "Asteroids – Mini App on Base",
     ogDescription: "Blast asteroids and set the high score. Play in Base app.",
     ogImageUrl: `${ROOT_URL}/hero-image.png`,
