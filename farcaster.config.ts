@@ -39,5 +39,6 @@ export const farcasterConfig = {
     ogTitle: "Asteroids – Mini App on Base",
     ogDescription: "Blast asteroids and set the high score. Play in Base app.",
     ogImageUrl: `${ROOT_URL}/hero-image.png`,
+    noindex: false,
   },
 } as const;
