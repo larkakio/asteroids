@@ -14,7 +14,7 @@ Classic arcade Asteroids game as a [Base mini app](https://docs.base.org/mini-ap
 
 ```bash
 cp .example.env .env
-# Set NEXT_PUBLIC_URL when deploying (e.g. https://your-app.vercel.app)
+# Set NEXT_PUBLIC_URL when deploying (e.g. https://asteroids-vert.vercel.app)
 npm install
 npm run dev
 ```
@@ -23,7 +23,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Deploy to Base
 
-1. **Deploy** the app (e.g. [Vercel](https://vercel.com)) and set `NEXT_PUBLIC_URL` to your production URL.
+1. **Deploy** the app (e.g. [Vercel](https://vercel.com)) and set `NEXT_PUBLIC_URL` to your production URL (e.g. `https://asteroids-vert.vercel.app`).
 2. **Manifest**: Update `farcaster.config.ts` (name, description, screenshots, etc.). Add `accountAssociation` after verifying your domain in [Base Build](https://www.base.dev/preview?tab=account).
 3. **Preview**: Use [base.dev/preview](https://base.dev/preview) to test embeds and metadata.
 4. **Publish**: Post your app URL in the Base app.

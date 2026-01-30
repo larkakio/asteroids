@@ -16,11 +16,12 @@ function getUrlHost(request: NextRequest): string {
   const host = request.headers.get("host");
   if (host) return host;
   const urlValue =
-    process.env.VERCEL_ENV === "production"
-      ? process.env.NEXT_PUBLIC_URL!
+    process.env.NEXT_PUBLIC_URL ||
+    (process.env.VERCEL_ENV === "production"
+      ? "https://asteroids-vert.vercel.app"
       : process.env.VERCEL_URL
         ? `https://${process.env.VERCEL_URL}`
-        : "http://localhost:3000";
+        : "http://localhost:3000");
   return new URL(urlValue).host;
 }
 
