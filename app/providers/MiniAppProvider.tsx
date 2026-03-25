@@ -3,48 +3,28 @@
 import {
   createContext,
   useContext,
-  useEffect,
-  useState,
   type ReactNode,
 } from "react";
-import sdk from "@farcaster/miniapp-sdk";
 
-type MiniAppContextData = Awaited<typeof sdk.context> | null;
-
+/** Legacy mini-app context shape; wallet identity comes from wagmi in Base App. */
 interface MiniAppContextValue {
-  context: MiniAppContextData;
+  context: null;
   isReady: boolean;
 }
 
 export const MiniAppContext = createContext<MiniAppContextValue | null>(null);
 
 export function useMiniApp() {
-  const context = useContext(MiniAppContext);
-  if (!context) {
+  const ctx = useContext(MiniAppContext);
+  if (!ctx) {
     throw new Error("useMiniApp must be used within MiniAppProvider");
   }
-  return context;
+  return ctx;
 }
 
 export function MiniAppProvider({ children }: { children: ReactNode }) {
-  const [context, setContext] = useState<MiniAppContextData>(null);
-  const [isReady, setIsReady] = useState(false);
-
-  useEffect(() => {
-    const init = async () => {
-      const isInApp = await sdk.isInMiniApp();
-      if (isInApp) {
-        const ctx = await sdk.context;
-        setContext(ctx);
-        await sdk.actions.ready();
-      }
-      setIsReady(true);
-    };
-    init();
-  }, []);
-
   return (
-    <MiniAppContext.Provider value={{ context, isReady }}>
+    <MiniAppContext.Provider value={{ context: null, isReady: true }}>
       {children}
     </MiniAppContext.Provider>
   );

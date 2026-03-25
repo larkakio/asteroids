@@ -1,26 +1,15 @@
 import type { Metadata } from "next";
 import { SafeArea } from "./components/SafeArea";
-import { farcasterConfig } from "../farcaster.config";
 import { Providers } from "./providers";
 import "./globals.css";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: farcasterConfig.miniapp.name,
-    description: farcasterConfig.miniapp.description,
+    title: "Asteroids",
+    description:
+      "Blast asteroids, avoid collisions, and beat the high score in this classic arcade mini app on Base.",
     other: {
       "base:app_id": "697cb90477db5d481cffc876",
-      "fc:frame": JSON.stringify({
-        version: farcasterConfig.miniapp.version,
-        imageUrl: farcasterConfig.miniapp.heroImageUrl,
-        button: {
-          title: `Play ${farcasterConfig.miniapp.name}`,
-          action: {
-            name: `Launch ${farcasterConfig.miniapp.name}`,
-            type: "launch_frame",
-          },
-        },
-      }),
     },
   };
 }
